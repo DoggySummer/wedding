@@ -22,17 +22,18 @@ input {
   background-color: #4173a5;
   width: 100%;
   height: 100%;
-  border-radius: 0 15px 15px 0;
+  border-radius: 15px;
   box-shadow: 0 0 5px rgb(41, 41, 41);
   display: flex;
   align-items: center;
   justify-content: center;
-  transform-origin: center left;
+  transform-origin: left 10px;
 }
 .cover {
   position: absolute;
   z-index: 4;
   transition: transform 1s;
+  transform-origin: left 10px;
 }
 .cover label {
   width: 100%;
@@ -42,23 +43,27 @@ input {
 .back-cover {
   position: relative;
   z-index: -1;
+  overflow: hidden;
 }
 .page {
   position: absolute;
   background-color: white;
   width: 330px;
   height: 430px;
-  border-radius: 0 15px 15px 0;
+  border-radius: 15px;
   margin-top: 10px;
-  transform-origin: left;
+  left: 10px;
+  transform-origin: left -10px;
   transform-style: preserve-3d;
   transform: rotateY(0deg);
   transition-duration: 1.5s;
+  overflow: hidden;
 }
+
 .page img {
   width: 100%;
   height: 100%;
-  border-radius: 15px 0 0 15px;
+  border-radius: 15px;
 }
 .front-page {
   position: absolute;
@@ -75,6 +80,8 @@ input {
   height: 100%;
   backface-visibility: hidden;
   z-index: 99;
+  background-color: white;
+  border-radius: 15px;
 }
 .next,
 .prev {
@@ -97,9 +104,6 @@ input {
 #page3 {
   z-index: 1;
 }
-/* #checkbox-cover:checked ~ .book {
-  transform: translateX(200px);
-} */
 #checkbox-cover:checked ~ .book .cover {
   transition: transform 1.5s, z-index 0.5s 0.5s;
   transform: rotateY(-180deg);
@@ -109,10 +113,10 @@ input {
   box-shadow: 0 0 3px rgb(99, 98, 98);
 }
 #checkbox-page1:checked ~ .book #page1 {
-  transform: rotateY(-180deg);
+  transform: rotateY(-180deg) translateX(30px);
   z-index: 2;
 }
 #checkbox-page2:checked ~ .book #page2 {
-  transform: rotateY(-180deg);
+  transform: rotateY(-180deg) translateX(30px);
   z-index: 3;
 }

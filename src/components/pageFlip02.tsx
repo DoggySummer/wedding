@@ -1,11 +1,11 @@
-import './pageFlip.css'
+import './pageFlip02.css'
 import img1 from '@/public/KakaoTalk_20250202_154023894_01.jpg'
 import img2 from '@/public/KakaoTalk_20250202_154023894_02.jpg'
 import img3 from '@/public/KakaoTalk_20250202_154023894_03.jpg'
 import Image from 'next/image'
 import { IoChevronForward, IoChevronBack } from 'react-icons/io5'
 
-const PageFlip = () => {
+const PageFlip02 = () => {
   return (
     <div>
       <input type='checkbox' id='checkbox-cover' />
@@ -60,4 +60,4 @@ const PageFlip = () => {
   )
 }
 
-export default PageFlip
+export default PageFlip02
